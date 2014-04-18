@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C5044817190022A100D699EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5044816190022A100D699EF /* Foundation.framework */; };
+		C5044819190022A100D699EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5044818190022A100D699EF /* CoreGraphics.framework */; };
+		C504481B190022A100D699EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C504481A190022A100D699EF /* UIKit.framework */; };
+		C5044821190022A200D699EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C504481F190022A200D699EF /* InfoPlist.strings */; };
+		C5044823190022A200D699EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5044822190022A200D699EF /* main.m */; };
+		C5044827190022A200D699EF /* SDSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5044826190022A200D699EF /* SDSAppDelegate.m */; };
+		C504482A190022A200D699EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5044828190022A200D699EF /* Main.storyboard */; };
+		C504482D190022A200D699EF /* SDSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C504482C190022A200D699EF /* SDSViewController.m */; };
+		C504482F190022A200D699EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C504482E190022A200D699EF /* Images.xcassets */; };
+		C5044836190022A200D699EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5044835190022A200D699EF /* XCTest.framework */; };
+		C5044837190022A200D699EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5044816190022A100D699EF /* Foundation.framework */; };
+		C5044838190022A200D699EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C504481A190022A100D699EF /* UIKit.framework */; };
+		C5044840190022A200D699EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C504483E190022A200D699EF /* InfoPlist.strings */; };
+		C5044842190022A200D699EF /* SDSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5044841190022A200D699EF /* SDSTests.m */; };
+		FCC46E2D1900E72A005949BD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC46E2C1900E72A005949BD /* MediaPlayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5044839190022A200D699EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C504480B190022A100D699EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5044812190022A100D699EF;
+			remoteInfo = SDS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C5044813190022A100D699EF /* SDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5044816190022A100D699EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C5044818190022A100D699EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C504481A190022A100D699EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C504481E190022A100D699EF /* SDS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SDS-Info.plist"; sourceTree = "<group>"; };
+		C5044820190022A200D699EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C5044822190022A200D699EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C5044824190022A200D699EF /* SDS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDS-Prefix.pch"; sourceTree = "<group>"; };
+		C5044825190022A200D699EF /* SDSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDSAppDelegate.h; sourceTree = "<group>"; };
+		C5044826190022A200D699EF /* SDSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDSAppDelegate.m; sourceTree = "<group>"; };
+		C5044829190022A200D699EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C504482B190022A200D699EF /* SDSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDSViewController.h; sourceTree = "<group>"; };
+		C504482C190022A200D699EF /* SDSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDSViewController.m; sourceTree = "<group>"; };
+		C504482E190022A200D699EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C5044834190022A200D699EF /* SDSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5044835190022A200D699EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C504483D190022A200D699EF /* SDSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SDSTests-Info.plist"; sourceTree = "<group>"; };
+		C504483F190022A200D699EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C5044841190022A200D699EF /* SDSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDSTests.m; sourceTree = "<group>"; };
+		FCC46E2C1900E72A005949BD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C5044810190022A100D699EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCC46E2D1900E72A005949BD /* MediaPlayer.framework in Frameworks */,
+				C5044819190022A100D699EF /* CoreGraphics.framework in Frameworks */,
+				C504481B190022A100D699EF /* UIKit.framework in Frameworks */,
+				C5044817190022A100D699EF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5044831190022A200D699EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5044836190022A200D699EF /* XCTest.framework in Frameworks */,
+				C5044838190022A200D699EF /* UIKit.framework in Frameworks */,
+				C5044837190022A200D699EF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C504480A190022A100D699EF = {
+			isa = PBXGroup;
+			children = (
+				C504481C190022A100D699EF /* SDS */,
+				C504483B190022A200D699EF /* SDSTests */,
+				C5044815190022A100D699EF /* Frameworks */,
+				C5044814190022A100D699EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C5044814190022A100D699EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5044813190022A100D699EF /* SDS.app */,
+				C5044834190022A200D699EF /* SDSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5044815190022A100D699EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCC46E2C1900E72A005949BD /* MediaPlayer.framework */,
+				C5044816190022A100D699EF /* Foundation.framework */,
+				C5044818190022A100D699EF /* CoreGraphics.framework */,
+				C504481A190022A100D699EF /* UIKit.framework */,
+				C5044835190022A200D699EF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C504481C190022A100D699EF /* SDS */ = {
+			isa = PBXGroup;
+			children = (
+				C5044825190022A200D699EF /* SDSAppDelegate.h */,
+				C5044826190022A200D699EF /* SDSAppDelegate.m */,
+				C5044828190022A200D699EF /* Main.storyboard */,
+				C504482B190022A200D699EF /* SDSViewController.h */,
+				C504482C190022A200D699EF /* SDSViewController.m */,
+				C504482E190022A200D699EF /* Images.xcassets */,
+				C504481D190022A100D699EF /* Supporting Files */,
+			);
+			path = SDS;
+			sourceTree = "<group>";
+		};
+		C504481D190022A100D699EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C504481E190022A100D699EF /* SDS-Info.plist */,
+				C504481F190022A200D699EF /* InfoPlist.strings */,
+				C5044822190022A200D699EF /* main.m */,
+				C5044824190022A200D699EF /* SDS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C504483B190022A200D699EF /* SDSTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5044841190022A200D699EF /* SDSTests.m */,
+				C504483C190022A200D699EF /* Supporting Files */,
+			);
+			path = SDSTests;
+			sourceTree = "<group>";
+		};
+		C504483C190022A200D699EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C504483D190022A200D699EF /* SDSTests-Info.plist */,
+				C504483E190022A200D699EF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C5044812190022A100D699EF /* SDS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5044845190022A200D699EF /* Build configuration list for PBXNativeTarget "SDS" */;
+			buildPhases = (
+				C504480F190022A100D699EF /* Sources */,
+				C5044810190022A100D699EF /* Frameworks */,
+				C5044811190022A100D699EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDS;
+			productName = SDS;
+			productReference = C5044813190022A100D699EF /* SDS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C5044833190022A200D699EF /* SDSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5044848190022A200D699EF /* Build configuration list for PBXNativeTarget "SDSTests" */;
+			buildPhases = (
+				C5044830190022A200D699EF /* Sources */,
+				C5044831190022A200D699EF /* Frameworks */,
+				C5044832190022A200D699EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C504483A190022A200D699EF /* PBXTargetDependency */,
+			);
+			name = SDSTests;
+			productName = SDSTests;
+			productReference = C5044834190022A200D699EF /* SDSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C504480B190022A100D699EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SDS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Silent Disco Squad";
+				TargetAttributes = {
+					C5044833190022A200D699EF = {
+						TestTargetID = C5044812190022A100D699EF;
+					};
+				};
+			};
+			buildConfigurationList = C504480E190022A100D699EF /* Build configuration list for PBXProject "SDS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C504480A190022A100D699EF;
+			productRefGroup = C5044814190022A100D699EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5044812190022A100D699EF /* SDS */,
+				C5044833190022A200D699EF /* SDSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C5044811190022A100D699EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C504482F190022A200D699EF /* Images.xcassets in Resources */,
+				C5044821190022A200D699EF /* InfoPlist.strings in Resources */,
+				C504482A190022A200D699EF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5044832190022A200D699EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5044840190022A200D699EF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C504480F190022A100D699EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5044823190022A200D699EF /* main.m in Sources */,
+				C504482D190022A200D699EF /* SDSViewController.m in Sources */,
+				C5044827190022A200D699EF /* SDSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5044830190022A200D699EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5044842190022A200D699EF /* SDSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C504483A190022A200D699EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5044812190022A100D699EF /* SDS */;
+			targetProxy = C5044839190022A200D699EF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C504481F190022A200D699EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5044820190022A200D699EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C5044828190022A200D699EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5044829190022A200D699EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C504483E190022A200D699EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C504483F190022A200D699EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C5044843190022A200D699EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C5044844190022A200D699EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C5044846190022A200D699EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SDS/SDS-Prefix.pch";
+				INFOPLIST_FILE = "SDS/SDS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C5044847190022A200D699EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SDS/SDS-Prefix.pch";
+				INFOPLIST_FILE = "SDS/SDS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C5044849190022A200D699EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SDS.app/SDS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SDS/SDS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SDSTests/SDSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C504484A190022A200D699EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SDS.app/SDS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SDS/SDS-Prefix.pch";
+				INFOPLIST_FILE = "SDSTests/SDSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C504480E190022A100D699EF /* Build configuration list for PBXProject "SDS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5044843190022A200D699EF /* Debug */,
+				C5044844190022A200D699EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5044845190022A200D699EF /* Build configuration list for PBXNativeTarget "SDS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5044846190022A200D699EF /* Debug */,
+				C5044847190022A200D699EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5044848190022A200D699EF /* Build configuration list for PBXNativeTarget "SDSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5044849190022A200D699EF /* Debug */,
+				C504484A190022A200D699EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C504480B190022A100D699EF /* Project object */;
+}
