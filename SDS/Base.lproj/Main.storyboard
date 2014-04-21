@@ -88,7 +88,7 @@
         <!--View Controller - MusicController-->
         <scene sceneID="6Uj-e3-PxX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eDh-Df-Clz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+				<placeholder placeholderIdentifier="IBFirstResponder" id="eDh-Df-Clz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="MusicController" id="vhW-0e-d8q" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eCU-3B-jFP" customClass="SynchTableView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -137,6 +137,9 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="dMO-eY-g62">
                                         <rect key="frame" x="89" y="58" width="213" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sliderDragged:" destination="Dnt-DU-doC" eventType="valueChanged" id="10c-QY-hUM"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
