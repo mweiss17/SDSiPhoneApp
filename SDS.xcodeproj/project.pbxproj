@@ -21,6 +21,13 @@
 		C5044838190022A200D699EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C504481A190022A100D699EF /* UIKit.framework */; };
 		C5044840190022A200D699EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C504483E190022A200D699EF /* InfoPlist.strings */; };
 		C5044842190022A200D699EF /* SDSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5044841190022A200D699EF /* SDSTests.m */; };
+		FCC3EEF51904428500C69E14 /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF11904428500C69E14 /* pause_button.png */; };
+		FCC3EEF61904428500C69E14 /* pause_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF21904428500C69E14 /* pause_button@2x.png */; };
+		FCC3EEF71904428500C69E14 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF31904428500C69E14 /* play_button.png */; };
+		FCC3EEF81904428500C69E14 /* play_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF41904428500C69E14 /* play_button@2x.png */; };
+		FCC3EEFA190447A900C69E14 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC3EEF9190447A900C69E14 /* AVFoundation.framework */; };
+		FCC3EEFC190447B200C69E14 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC3EEFB190447B200C69E14 /* CoreMedia.framework */; };
+		FCC3EEFF1904546700C69E14 /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC3EEFE1904546700C69E14 /* MusicViewController.m */; };
 		FCC46E2D1900E72A005949BD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC46E2C1900E72A005949BD /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +61,14 @@
 		C504483D190022A200D699EF /* SDSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SDSTests-Info.plist"; sourceTree = "<group>"; };
 		C504483F190022A200D699EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5044841190022A200D699EF /* SDSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDSTests.m; sourceTree = "<group>"; };
+		FCC3EEF11904428500C69E14 /* pause_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_button.png; sourceTree = "<group>"; };
+		FCC3EEF21904428500C69E14 /* pause_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause_button@2x.png"; sourceTree = "<group>"; };
+		FCC3EEF31904428500C69E14 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
+		FCC3EEF41904428500C69E14 /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_button@2x.png"; sourceTree = "<group>"; };
+		FCC3EEF9190447A900C69E14 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FCC3EEFB190447B200C69E14 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		FCC3EEFD1904546700C69E14 /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
+		FCC3EEFE1904546700C69E14 /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		FCC46E2C1900E72A005949BD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -62,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC3EEFC190447B200C69E14 /* CoreMedia.framework in Frameworks */,
+				FCC3EEFA190447A900C69E14 /* AVFoundation.framework in Frameworks */,
 				FCC46E2D1900E72A005949BD /* MediaPlayer.framework in Frameworks */,
 				C5044819190022A100D699EF /* CoreGraphics.framework in Frameworks */,
 				C504481B190022A100D699EF /* UIKit.framework in Frameworks */,
@@ -85,6 +102,7 @@
 		C504480A190022A100D699EF = {
 			isa = PBXGroup;
 			children = (
+				FCC3EEF01904428500C69E14 /* MusicPlayerResources */,
 				C504481C190022A100D699EF /* SDS */,
 				C504483B190022A200D699EF /* SDSTests */,
 				C5044815190022A100D699EF /* Frameworks */,
@@ -104,6 +122,8 @@
 		C5044815190022A100D699EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCC3EEFB190447B200C69E14 /* CoreMedia.framework */,
+				FCC3EEF9190447A900C69E14 /* AVFoundation.framework */,
 				FCC46E2C1900E72A005949BD /* MediaPlayer.framework */,
 				C5044816190022A100D699EF /* Foundation.framework */,
 				C5044818190022A100D699EF /* CoreGraphics.framework */,
@@ -119,6 +139,8 @@
 				C5044825190022A200D699EF /* SDSAppDelegate.h */,
 				C5044826190022A200D699EF /* SDSAppDelegate.m */,
 				C5044828190022A200D699EF /* Main.storyboard */,
+				FCC3EEFD1904546700C69E14 /* MusicViewController.h */,
+				FCC3EEFE1904546700C69E14 /* MusicViewController.m */,
 				C504482B190022A200D699EF /* SDSViewController.h */,
 				C504482C190022A200D699EF /* SDSViewController.m */,
 				C504482E190022A200D699EF /* Images.xcassets */,
@@ -154,6 +176,17 @@
 				C504483E190022A200D699EF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCC3EEF01904428500C69E14 /* MusicPlayerResources */ = {
+			isa = PBXGroup;
+			children = (
+				FCC3EEF11904428500C69E14 /* pause_button.png */,
+				FCC3EEF21904428500C69E14 /* pause_button@2x.png */,
+				FCC3EEF31904428500C69E14 /* play_button.png */,
+				FCC3EEF41904428500C69E14 /* play_button@2x.png */,
+			);
+			path = MusicPlayerResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +237,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Silent Disco Squad";
 				TargetAttributes = {
+					C5044812190022A100D699EF = {
+						DevelopmentTeam = 6ZUB2TR58V;
+					};
 					C5044833190022A200D699EF = {
 						TestTargetID = C5044812190022A100D699EF;
 					};
@@ -233,6 +269,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC3EEF51904428500C69E14 /* pause_button.png in Resources */,
+				FCC3EEF71904428500C69E14 /* play_button.png in Resources */,
+				FCC3EEF61904428500C69E14 /* pause_button@2x.png in Resources */,
+				FCC3EEF81904428500C69E14 /* play_button@2x.png in Resources */,
 				C504482F190022A200D699EF /* Images.xcassets in Resources */,
 				C5044821190022A200D699EF /* InfoPlist.strings in Resources */,
 				C504482A190022A200D699EF /* Main.storyboard in Resources */,
@@ -255,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5044823190022A200D699EF /* main.m in Sources */,
+				FCC3EEFF1904546700C69E14 /* MusicViewController.m in Sources */,
 				C504482D190022A200D699EF /* SDSViewController.m in Sources */,
 				C5044827190022A200D699EF /* SDSAppDelegate.m in Sources */,
 			);
@@ -381,11 +422,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SDS/SDS-Prefix.pch";
 				INFOPLIST_FILE = "SDS/SDS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -396,11 +440,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SDS/SDS-Prefix.pch";
 				INFOPLIST_FILE = "SDS/SDS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

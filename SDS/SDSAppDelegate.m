@@ -12,16 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	// instantiate a music player
-	MPMusicPlayerController *myPlayer =
-    [MPMusicPlayerController applicationMusicPlayer];
-	
-	// assign a playback queue containing all media items on the device
-	[myPlayer setQueueWithQuery: [MPMediaQuery songsQuery]];
-	
-	// start playing from the beginning of the queue
-	[myPlayer play];
-
     // Override point for customization after application launch.
     return YES;
 }

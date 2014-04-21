@@ -7,6 +7,7 @@
 //
 
 #import "SDSViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface SDSViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *Enter;
