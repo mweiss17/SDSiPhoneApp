@@ -37,7 +37,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 	//1
-	self.tableView.dataSource =self;
+	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
 	//2
 	self.audioPlayer = [[AVPlayer alloc] init];

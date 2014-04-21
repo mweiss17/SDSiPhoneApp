@@ -88,7 +88,6 @@
         <!--View Controller - MusicController-->
         <scene sceneID="6Uj-e3-PxX">
             <objects>
-				<placeholder placeholderIdentifier="IBFirstResponder" id="eDh-Df-Clz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="MusicController" id="vhW-0e-d8q" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eCU-3B-jFP" customClass="SynchTableView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -104,6 +103,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Contact" id="ik7-pt-ZrZ"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDh-Df-Clz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="682" y="949"/>
         </scene>
@@ -206,6 +206,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="gvF-ma-kUn"/>
                     <connections>
+                        <outlet property="durationOutlet" destination="Sj6-xv-FTz" id="r3u-gg-sU0"/>
+                        <outlet property="sliderOutlet" destination="dMO-eY-g62" id="4dR-x6-MeQ"/>
+                        <outlet property="songName" destination="u0I-JE-CJN" id="rKz-Dx-qqA"/>
+                        <outlet property="tableView" destination="NFP-q6-m1V" id="Sak-zC-SbQ"/>
                         <outlet property="togglePlayPause" destination="pzx-tO-oYV" id="ZGv-e1-qCg"/>
                     </connections>
                 </viewController>

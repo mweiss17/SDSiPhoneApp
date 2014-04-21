@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
-@interface MusicViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+
+@interface MusicViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AVAudioPlayerDelegate>
+//@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 @end
