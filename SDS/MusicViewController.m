@@ -40,23 +40,38 @@
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
 	//2
-	self.audioPlayer = [[AVPlayer alloc] init];
+	//self.audioPlayer = [[AVPlayer alloc] init];
 	MPMediaQuery *everything = [[MPMediaQuery alloc] init];
 	NSArray *itemsFromGenericQuery = [everything items];
 	self.songsList = [NSMutableArray arrayWithArray:itemsFromGenericQuery];
 	//3
 	[self.tableView reloadData];
 	//4
+	
 	MPMediaItem *song = [self.songsList objectAtIndex:0];
-	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[song valueForProperty:MPMediaItemPropertyAssetURL]];
-	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
-	[self.audioPlayer play];
+	NSURL *songURL = [song valueForProperty:MPMediaItemPropertyAssetURL];
+	//AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:songURL];
+	
+	//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Really reset?" message:(NSString*) playerItem.asset delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+	//[alert show];
+
+//AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[song valueForProperty:MPMediaItemPropertyAssetURL]];
+	self.audioPlayer = [[AVPlayer alloc] initWithURL:songURL];
+	//[self.audioPlayer play];
 	//5
 	NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
 	self.songName.text = songTitle;
 	[self.sliderOutlet setMaximumValue:self.audioPlayer.currentItem.duration.value/self.audioPlayer.currentItem.duration.timescale];
 	//6
 	[self configurePlayer];
+	
+	/*UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Title"
+													   message:songTitle
+													  delegate:self
+											 cancelButtonTitle:@"OK"
+											 otherButtonTitles:nil];
+	[theAlert show];*/
+
 }
 
 - (void)didReceiveMemoryWarning

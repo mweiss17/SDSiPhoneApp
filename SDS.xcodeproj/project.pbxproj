@@ -21,6 +21,7 @@
 		C5044838190022A200D699EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C504481A190022A100D699EF /* UIKit.framework */; };
 		C5044840190022A200D699EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C504483E190022A200D699EF /* InfoPlist.strings */; };
 		C5044842190022A200D699EF /* SDSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5044841190022A200D699EF /* SDSTests.m */; };
+		FC6DA7A31906BED300D4A1AA /* MVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6DA7A21906BED300D4A1AA /* MVViewController.m */; };
 		FCC3EEF51904428500C69E14 /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF11904428500C69E14 /* pause_button.png */; };
 		FCC3EEF61904428500C69E14 /* pause_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF21904428500C69E14 /* pause_button@2x.png */; };
 		FCC3EEF71904428500C69E14 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF31904428500C69E14 /* play_button.png */; };
@@ -29,7 +30,6 @@
 		FCC3EEFC190447B200C69E14 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC3EEFB190447B200C69E14 /* CoreMedia.framework */; };
 		FCC3EEFF1904546700C69E14 /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC3EEFE1904546700C69E14 /* MusicViewController.m */; };
 		FCC3EF0B19059DB900C69E14 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC3EF0A19059DB900C69E14 /* AudioToolbox.framework */; };
-		FCC3EF111905A98F00C69E14 /* MusicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC3EF101905A98F00C69E14 /* MusicTableViewController.m */; };
 		FCC46E2D1900E72A005949BD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC46E2C1900E72A005949BD /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +63,8 @@
 		C504483D190022A200D699EF /* SDSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SDSTests-Info.plist"; sourceTree = "<group>"; };
 		C504483F190022A200D699EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5044841190022A200D699EF /* SDSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDSTests.m; sourceTree = "<group>"; };
+		FC6DA7A11906BED300D4A1AA /* MVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVViewController.h; sourceTree = "<group>"; };
+		FC6DA7A21906BED300D4A1AA /* MVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVViewController.m; sourceTree = "<group>"; };
 		FCC3EEF11904428500C69E14 /* pause_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_button.png; sourceTree = "<group>"; };
 		FCC3EEF21904428500C69E14 /* pause_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause_button@2x.png"; sourceTree = "<group>"; };
 		FCC3EEF31904428500C69E14 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
@@ -72,8 +74,6 @@
 		FCC3EEFD1904546700C69E14 /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
 		FCC3EEFE1904546700C69E14 /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		FCC3EF0A19059DB900C69E14 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		FCC3EF0F1905A98F00C69E14 /* MusicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicTableViewController.h; path = ../MusicTableViewController.h; sourceTree = "<group>"; };
-		FCC3EF101905A98F00C69E14 /* MusicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicTableViewController.m; path = ../MusicTableViewController.m; sourceTree = "<group>"; };
 		FCC46E2C1900E72A005949BD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -143,11 +143,11 @@
 		C504481C190022A100D699EF /* SDS */ = {
 			isa = PBXGroup;
 			children = (
-				FCC3EF0F1905A98F00C69E14 /* MusicTableViewController.h */,
-				FCC3EF101905A98F00C69E14 /* MusicTableViewController.m */,
 				C5044825190022A200D699EF /* SDSAppDelegate.h */,
 				C5044826190022A200D699EF /* SDSAppDelegate.m */,
 				C5044828190022A200D699EF /* Main.storyboard */,
+				FC6DA7A11906BED300D4A1AA /* MVViewController.h */,
+				FC6DA7A21906BED300D4A1AA /* MVViewController.m */,
 				FCC3EEFD1904546700C69E14 /* MusicViewController.h */,
 				FCC3EEFE1904546700C69E14 /* MusicViewController.m */,
 				C504482B190022A200D699EF /* SDSViewController.h */,
@@ -303,7 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCC3EF111905A98F00C69E14 /* MusicTableViewController.m in Sources */,
+				FC6DA7A31906BED300D4A1AA /* MVViewController.m in Sources */,
 				C5044823190022A200D699EF /* main.m in Sources */,
 				FCC3EEFF1904546700C69E14 /* MusicViewController.m in Sources */,
 				C504482D190022A200D699EF /* SDSViewController.m in Sources */,

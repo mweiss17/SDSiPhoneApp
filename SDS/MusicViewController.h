@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 
-@interface MusicViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AVAudioPlayerDelegate>
+@interface MusicViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 //@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 @end
