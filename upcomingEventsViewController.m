@@ -7,8 +7,9 @@
 //
 
 #import "upcomingEventsViewController.h"
+#import "SDSAppDelegate.h"
 
-@interface upcomingEventsViewController ()
+@interface upcomingEventsViewController () <NSURLSessionDelegate, NSURLSessionDownloadDelegate>
 
 @end
 
@@ -28,7 +29,6 @@
     [super viewDidLoad];
 	NSString *fullURL = @"http://54.186.228.67/appindex.html ";
     NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	// Get the data
 	NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
@@ -53,6 +53,49 @@
     
 }
 
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
+    NSData *data = [NSData dataWithContentsOfURL:location];
+	
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //[self.progressView setHidden:YES];
+        //[self.imageView setImage:[UIImage imageWithData:data]];
+    });
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes {
+	
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
+    float progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
+	
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //[self.progressView setProgress:progress];
+    });
+}
+
+-(void) sendHTTPGet
+{
+    NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
+    
+    NSURL * url = [NSURL URLWithString:@"http://54.186.228.67/appindex.html/"];
+	
+    NSURLSessionDataTask * dataTask = [delegateFreeSession dataTaskWithURL:url
+                                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+															 if(error == nil)
+															 {
+																 NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+																 NSLog(@"Data = %@",text);
+															 }
+															 
+														 }];
+    
+    [dataTask resume];
+    
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -61,13 +104,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }

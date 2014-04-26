@@ -12,5 +12,6 @@
 @interface SDSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property id completionHandler;
 
 @end

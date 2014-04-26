@@ -29,7 +29,6 @@
 		FCC3EEF81904428500C69E14 /* play_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF41904428500C69E14 /* play_button@2x.png */; };
 		FCC3EEFA190447A900C69E14 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC3EEF9190447A900C69E14 /* AVFoundation.framework */; };
 		FCC3EEFC190447B200C69E14 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC3EEFB190447B200C69E14 /* CoreMedia.framework */; };
-		FCC3EEFF1904546700C69E14 /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC3EEFE1904546700C69E14 /* MusicViewController.m */; };
 		FCC3EF0B19059DB900C69E14 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC3EF0A19059DB900C69E14 /* AudioToolbox.framework */; };
 		FCC46E2D1900E72A005949BD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC46E2C1900E72A005949BD /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
@@ -74,8 +73,6 @@
 		FCC3EEF41904428500C69E14 /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_button@2x.png"; sourceTree = "<group>"; };
 		FCC3EEF9190447A900C69E14 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FCC3EEFB190447B200C69E14 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		FCC3EEFD1904546700C69E14 /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
-		FCC3EEFE1904546700C69E14 /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		FCC3EF0A19059DB900C69E14 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FCC46E2C1900E72A005949BD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -153,8 +150,6 @@
 				C5044828190022A200D699EF /* Main.storyboard */,
 				FC6DA7A11906BED300D4A1AA /* MVViewController.h */,
 				FC6DA7A21906BED300D4A1AA /* MVViewController.m */,
-				FCC3EEFD1904546700C69E14 /* MusicViewController.h */,
-				FCC3EEFE1904546700C69E14 /* MusicViewController.m */,
 				C504482B190022A200D699EF /* SDSViewController.h */,
 				C504482C190022A200D699EF /* SDSViewController.m */,
 				C504482E190022A200D699EF /* Images.xcassets */,
@@ -310,7 +305,6 @@
 			files = (
 				FC6DA7A31906BED300D4A1AA /* MVViewController.m in Sources */,
 				C5044823190022A200D699EF /* main.m in Sources */,
-				FCC3EEFF1904546700C69E14 /* MusicViewController.m in Sources */,
 				FCC0E4BA1908555D00371978 /* upcomingEventsViewController.m in Sources */,
 				C504482D190022A200D699EF /* SDSViewController.m in Sources */,
 				C5044827190022A200D699EF /* SDSAppDelegate.m in Sources */,

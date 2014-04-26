@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="533" y="1025"/>
         </scene>
-        <!--Music View Controller - Item-->
+        <!--View Controller - Item-->
         <scene sceneID="bg4-8F-rHN">
             <objects>
-                <viewController id="Dnt-DU-doC" customClass="MusicViewController" sceneMemberID="viewController">
+                <viewController id="Dnt-DU-doC" customClass="MVViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TTe-oS-zFE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

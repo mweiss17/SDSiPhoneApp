@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface upcomingEventsViewController : UITableViewController
+@interface upcomingEventsViewController : UITableViewController<NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate>
 
 @end

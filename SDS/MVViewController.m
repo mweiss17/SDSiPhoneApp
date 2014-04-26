@@ -105,7 +105,6 @@
   return cell;
 }
 
-#pragma mark - TableView Delegate Methods
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [self.audioPlayer pause];
