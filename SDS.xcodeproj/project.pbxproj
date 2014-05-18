@@ -22,7 +22,10 @@
 		C5044840190022A200D699EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C504483E190022A200D699EF /* InfoPlist.strings */; };
 		C5044842190022A200D699EF /* SDSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5044841190022A200D699EF /* SDSTests.m */; };
 		FC6DA7A31906BED300D4A1AA /* MVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6DA7A21906BED300D4A1AA /* MVViewController.m */; };
+		FCBFFD27190F550B0064ABFF /* MissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBFFD26190F550B0064ABFF /* MissionViewController.m */; };
 		FCC0E4BA1908555D00371978 /* upcomingEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC0E4B91908555D00371978 /* upcomingEventsViewController.m */; };
+		FCC15FA81928F4D000615EF5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC15FA71928F4D000615EF5 /* MapKit.framework */; };
+		FCC3CF2F1927B69A00224EE4 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC3CF2E1927B69A00224EE4 /* EventViewController.m */; };
 		FCC3EEF51904428500C69E14 /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF11904428500C69E14 /* pause_button.png */; };
 		FCC3EEF61904428500C69E14 /* pause_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF21904428500C69E14 /* pause_button@2x.png */; };
 		FCC3EEF71904428500C69E14 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3EEF31904428500C69E14 /* play_button.png */; };
@@ -65,8 +68,13 @@
 		C5044841190022A200D699EF /* SDSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDSTests.m; sourceTree = "<group>"; };
 		FC6DA7A11906BED300D4A1AA /* MVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVViewController.h; sourceTree = "<group>"; };
 		FC6DA7A21906BED300D4A1AA /* MVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVViewController.m; sourceTree = "<group>"; };
+		FCBFFD25190F550B0064ABFF /* MissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionViewController.h; sourceTree = "<group>"; };
+		FCBFFD26190F550B0064ABFF /* MissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionViewController.m; sourceTree = "<group>"; };
 		FCC0E4B81908555D00371978 /* upcomingEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = upcomingEventsViewController.h; path = ../upcomingEventsViewController.h; sourceTree = "<group>"; };
 		FCC0E4B91908555D00371978 /* upcomingEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = upcomingEventsViewController.m; path = ../upcomingEventsViewController.m; sourceTree = "<group>"; };
+		FCC15FA71928F4D000615EF5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FCC3CF2D1927B69A00224EE4 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		FCC3CF2E1927B69A00224EE4 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		FCC3EEF11904428500C69E14 /* pause_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_button.png; sourceTree = "<group>"; };
 		FCC3EEF21904428500C69E14 /* pause_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause_button@2x.png"; sourceTree = "<group>"; };
 		FCC3EEF31904428500C69E14 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
@@ -82,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC15FA81928F4D000615EF5 /* MapKit.framework in Frameworks */,
 				FCC3EF0B19059DB900C69E14 /* AudioToolbox.framework in Frameworks */,
 				FCC3EEFC190447B200C69E14 /* CoreMedia.framework in Frameworks */,
 				FCC3EEFA190447A900C69E14 /* AVFoundation.framework in Frameworks */,
@@ -128,6 +137,7 @@
 		C5044815190022A100D699EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCC15FA71928F4D000615EF5 /* MapKit.framework */,
 				FCC3EF0A19059DB900C69E14 /* AudioToolbox.framework */,
 				FCC3EEFB190447B200C69E14 /* CoreMedia.framework */,
 				FCC3EEF9190447A900C69E14 /* AVFoundation.framework */,
@@ -147,6 +157,10 @@
 				FCC0E4B91908555D00371978 /* upcomingEventsViewController.m */,
 				C5044825190022A200D699EF /* SDSAppDelegate.h */,
 				C5044826190022A200D699EF /* SDSAppDelegate.m */,
+				FCC3CF2D1927B69A00224EE4 /* EventViewController.h */,
+				FCC3CF2E1927B69A00224EE4 /* EventViewController.m */,
+				FCBFFD25190F550B0064ABFF /* MissionViewController.h */,
+				FCBFFD26190F550B0064ABFF /* MissionViewController.m */,
 				C5044828190022A200D699EF /* Main.storyboard */,
 				FC6DA7A11906BED300D4A1AA /* MVViewController.h */,
 				FC6DA7A21906BED300D4A1AA /* MVViewController.m */,
@@ -306,8 +320,10 @@
 				FC6DA7A31906BED300D4A1AA /* MVViewController.m in Sources */,
 				C5044823190022A200D699EF /* main.m in Sources */,
 				FCC0E4BA1908555D00371978 /* upcomingEventsViewController.m in Sources */,
+				FCC3CF2F1927B69A00224EE4 /* EventViewController.m in Sources */,
 				C504482D190022A200D699EF /* SDSViewController.m in Sources */,
 				C5044827190022A200D699EF /* SDSAppDelegate.m in Sources */,
+				FCBFFD27190F550B0064ABFF /* MissionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

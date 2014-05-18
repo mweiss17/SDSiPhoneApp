@@ -56,25 +56,8 @@
 	[self.sliderOutlet setMaximumValue:self.audioPlayer.currentItem.duration.value/self.audioPlayer.currentItem.duration.timescale];
 	//6
 	[self configurePlayer];
-	
-	/*
-	 if (self.audioPlayer.status == AVPlayerStatusReadyToPlay) {
-	 UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Title"
-	 message:@"ReadyToPlay!"
-	 delegate:self
-	 cancelButtonTitle:@"OK"
-	 otherButtonTitles:nil];
-	 [theAlert show];
-	 }
-	*/
-
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)togglePlayPauseTapped:(id)sender {
   if(self.togglePlayPause.selected) {
     [self.audioPlayer pause];
@@ -122,30 +105,28 @@
 }
 
 -(void) configurePlayer {
-  //7
   __block MVViewController * weakSelf = self;
-  //8
   [self.audioPlayer addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(1, 1)
-                                                 queue:NULL
-                                            usingBlock:^(CMTime time) {
-                                              if(!time.value) {
-                                                return;
-                                              }
-                
-                       
-                                              
-                                              int currentTime = (int)((weakSelf.audioPlayer.currentTime.value)/weakSelf.audioPlayer.currentTime.timescale);
-                                              int currentMins = (int)(currentTime/60);
-                                              int currentSec  = (int)(currentTime%60);
-                                              
+		 queue:NULL
+	usingBlock:^(CMTime time) {
+	  if(!time.value) {
+		return;
+	  }
 
-                                              
-                                              NSString * durationLabel =
-                                              [NSString stringWithFormat:@"%02d:%02d",currentMins,currentSec];
-                                              weakSelf.durationOutlet.text = durationLabel;
-                                              weakSelf.sliderOutlet.value = currentTime;
-                                            }];
+	  int currentTime = (int)((weakSelf.audioPlayer.currentTime.value)/weakSelf.audioPlayer.currentTime.timescale);
+	  int currentMins = (int)(currentTime/60);
+	  int currentSec  = (int)(currentTime%60);
+	  
+	  NSString * durationLabel =
+	  [NSString stringWithFormat:@"%02d:%02d",currentMins,currentSec];
+	  weakSelf.durationOutlet.text = durationLabel;
+	  weakSelf.sliderOutlet.value = currentTime;
+	}];
+}
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 }
 
 @end

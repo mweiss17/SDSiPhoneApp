@@ -27,10 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	NSString *fullURL = @"http://54.186.228.67/appindex.html ";
-    NSURL *url = [NSURL URLWithString:fullURL];
+	[self sendHTTPGet];
 	// Get the data
-	NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+	/*NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
 
 
@@ -48,32 +47,11 @@
 
 															 }
 															 
-														 }];
+														 }];*/
+				
 		
     
 }
-
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
-    NSData *data = [NSData dataWithContentsOfURL:location];
-	
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //[self.progressView setHidden:YES];
-        //[self.imageView setImage:[UIImage imageWithData:data]];
-    });
-}
-
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes {
-	
-}
-
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
-    float progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
-	
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //[self.progressView setProgress:progress];
-    });
-}
-
 -(void) sendHTTPGet
 {
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -94,6 +72,8 @@
     [dataTask resume];
     
 }
+
+
 
 
 - (void)didReceiveMemoryWarning
