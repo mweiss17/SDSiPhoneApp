@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FirstView.h
 //  SDSApp2
 //
 //  Created by Martin Weiss 1 on 2014-07-15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface FirstView : UIView
 
 @end

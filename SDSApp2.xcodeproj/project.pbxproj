@@ -13,14 +13,31 @@
 		FC41E9151975B53D00BD3D44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC41E9131975B53D00BD3D44 /* InfoPlist.strings */; };
 		FC41E9171975B53D00BD3D44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC41E9161975B53D00BD3D44 /* main.m */; };
 		FC41E91B1975B53D00BD3D44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC41E91A1975B53D00BD3D44 /* AppDelegate.m */; };
-		FC41E91E1975B53D00BD3D44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC41E91C1975B53D00BD3D44 /* Main.storyboard */; };
-		FC41E9211975B53D00BD3D44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC41E9201975B53D00BD3D44 /* ViewController.m */; };
+		FC41E9211975B53D00BD3D44 /* aViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC41E9201975B53D00BD3D44 /* aViewController.m */; };
 		FC41E9231975B53D00BD3D44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC41E9221975B53D00BD3D44 /* Images.xcassets */; };
 		FC41E92A1975B53E00BD3D44 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC41E9291975B53E00BD3D44 /* XCTest.framework */; };
 		FC41E92B1975B53E00BD3D44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC41E90A1975B53D00BD3D44 /* Foundation.framework */; };
 		FC41E92C1975B53E00BD3D44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC41E90E1975B53D00BD3D44 /* UIKit.framework */; };
 		FC41E9341975B53E00BD3D44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC41E9321975B53E00BD3D44 /* InfoPlist.strings */; };
 		FC41E9361975B53E00BD3D44 /* SDSApp2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC41E9351975B53E00BD3D44 /* SDSApp2Tests.m */; };
+		FC41E9411975B6B100BD3D44 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = FC41E9401975B6B100BD3D44 /* Common.m */; };
+		FC41E9441975B75A00BD3D44 /* TurningWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = FC41E9421975B75A00BD3D44 /* TurningWhite.png */; };
+		FC41E9451975B75A00BD3D44 /* logos-04.png in Resources */ = {isa = PBXBuildFile; fileRef = FC41E9431975B75A00BD3D44 /* logos-04.png */; };
+		FC41E9471975B77A00BD3D44 /* logos-03.png in Resources */ = {isa = PBXBuildFile; fileRef = FC41E9461975B77A00BD3D44 /* logos-03.png */; };
+		FCB9F43C19801AB800050BCF /* bTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB9F43B19801AB800050BCF /* bTableViewController.m */; };
+		FCB9F43E198023A300050BCF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9F43D198023A300050BCF /* MapKit.framework */; };
+		FCB9F44119803D1000050BCF /* cEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB9F44019803D1000050BCF /* cEventViewController.m */; };
+		FCB9F4471980605A00050BCF /* baTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB9F4451980605A00050BCF /* baTableViewCell.m */; };
+		FCB9F44F198067C100050BCF /* Dosis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F4481980679E00050BCF /* Dosis-SemiBold.otf */; };
+		FCB9F450198067C100050BCF /* Dosis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F4491980679E00050BCF /* Dosis-Regular.otf */; };
+		FCB9F451198067C100050BCF /* Dosis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F44A1980679E00050BCF /* Dosis-Medium.otf */; };
+		FCB9F452198067C100050BCF /* Dosis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F44B1980679E00050BCF /* Dosis-Light.otf */; };
+		FCB9F453198067C100050BCF /* Dosis-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F44C1980679E00050BCF /* Dosis-ExtraLight.otf */; };
+		FCB9F454198067C100050BCF /* Dosis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F44D1980679E00050BCF /* Dosis-ExtraBold.otf */; };
+		FCB9F455198067C100050BCF /* Dosis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F44E1980679E00050BCF /* Dosis-Bold.otf */; };
+		FCC287C619842C5A00075737 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC287C519842C5A00075737 /* MediaPlayer.framework */; };
+		FCC287C819853F3B00075737 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC287C719853F3B00075737 /* AVFoundation.framework */; };
+		FCC287CB1985609500075737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC287C91985609500075737 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +61,36 @@
 		FC41E9181975B53D00BD3D44 /* SDSApp2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDSApp2-Prefix.pch"; sourceTree = "<group>"; };
 		FC41E9191975B53D00BD3D44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC41E91A1975B53D00BD3D44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FC41E91D1975B53D00BD3D44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FC41E91F1975B53D00BD3D44 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FC41E9201975B53D00BD3D44 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FC41E91F1975B53D00BD3D44 /* aViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aViewController.h; sourceTree = "<group>"; };
+		FC41E9201975B53D00BD3D44 /* aViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aViewController.m; sourceTree = "<group>"; };
 		FC41E9221975B53D00BD3D44 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC41E9281975B53E00BD3D44 /* SDSApp2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDSApp2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC41E9291975B53E00BD3D44 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FC41E9311975B53E00BD3D44 /* SDSApp2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SDSApp2Tests-Info.plist"; sourceTree = "<group>"; };
 		FC41E9331975B53E00BD3D44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC41E9351975B53E00BD3D44 /* SDSApp2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDSApp2Tests.m; sourceTree = "<group>"; };
+		FC41E93F1975B6B100BD3D44 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		FC41E9401975B6B100BD3D44 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		FC41E9421975B75A00BD3D44 /* TurningWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TurningWhite.png; sourceTree = "<group>"; };
+		FC41E9431975B75A00BD3D44 /* logos-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logos-04.png"; sourceTree = "<group>"; };
+		FC41E9461975B77A00BD3D44 /* logos-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logos-03.png"; sourceTree = "<group>"; };
+		FCB9F43A19801AB800050BCF /* bTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bTableViewController.h; path = ../bTableViewController.h; sourceTree = "<group>"; };
+		FCB9F43B19801AB800050BCF /* bTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bTableViewController.m; path = ../bTableViewController.m; sourceTree = "<group>"; };
+		FCB9F43D198023A300050BCF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FCB9F43F19803D1000050BCF /* cEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cEventViewController.h; sourceTree = "<group>"; };
+		FCB9F44019803D1000050BCF /* cEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cEventViewController.m; sourceTree = "<group>"; };
+		FCB9F4451980605A00050BCF /* baTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baTableViewCell.m; sourceTree = "<group>"; };
+		FCB9F4461980605A00050BCF /* baTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baTableViewCell.h; sourceTree = "<group>"; };
+		FCB9F4481980679E00050BCF /* Dosis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-SemiBold.otf"; path = "../../../../Downloads/dosis/Dosis-SemiBold.otf"; sourceTree = "<group>"; };
+		FCB9F4491980679E00050BCF /* Dosis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-Regular.otf"; path = "../../../../Downloads/dosis/Dosis-Regular.otf"; sourceTree = "<group>"; };
+		FCB9F44A1980679E00050BCF /* Dosis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-Medium.otf"; path = "../../../../Downloads/dosis/Dosis-Medium.otf"; sourceTree = "<group>"; };
+		FCB9F44B1980679E00050BCF /* Dosis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-Light.otf"; path = "../../../../Downloads/dosis/Dosis-Light.otf"; sourceTree = "<group>"; };
+		FCB9F44C1980679E00050BCF /* Dosis-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-ExtraLight.otf"; path = "../../../../Downloads/dosis/Dosis-ExtraLight.otf"; sourceTree = "<group>"; };
+		FCB9F44D1980679E00050BCF /* Dosis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-ExtraBold.otf"; path = "../../../../Downloads/dosis/Dosis-ExtraBold.otf"; sourceTree = "<group>"; };
+		FCB9F44E1980679E00050BCF /* Dosis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-Bold.otf"; path = "../../../../Downloads/dosis/Dosis-Bold.otf"; sourceTree = "<group>"; };
+		FCC287C519842C5A00075737 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		FCC287C719853F3B00075737 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FCC287CA1985609500075737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +98,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC287C819853F3B00075737 /* AVFoundation.framework in Frameworks */,
+				FCC287C619842C5A00075737 /* MediaPlayer.framework in Frameworks */,
+				FCB9F43E198023A300050BCF /* MapKit.framework in Frameworks */,
 				FC41E90D1975B53D00BD3D44 /* CoreGraphics.framework in Frameworks */,
 				FC41E90F1975B53D00BD3D44 /* UIKit.framework in Frameworks */,
 				FC41E90B1975B53D00BD3D44 /* Foundation.framework in Frameworks */,
@@ -101,6 +142,9 @@
 		FC41E9091975B53D00BD3D44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCC287C719853F3B00075737 /* AVFoundation.framework */,
+				FCC287C519842C5A00075737 /* MediaPlayer.framework */,
+				FCB9F43D198023A300050BCF /* MapKit.framework */,
 				FC41E90A1975B53D00BD3D44 /* Foundation.framework */,
 				FC41E90C1975B53D00BD3D44 /* CoreGraphics.framework */,
 				FC41E90E1975B53D00BD3D44 /* UIKit.framework */,
@@ -112,11 +156,19 @@
 		FC41E9101975B53D00BD3D44 /* SDSApp2 */ = {
 			isa = PBXGroup;
 			children = (
+				FCC287C91985609500075737 /* Main.storyboard */,
 				FC41E9191975B53D00BD3D44 /* AppDelegate.h */,
 				FC41E91A1975B53D00BD3D44 /* AppDelegate.m */,
-				FC41E91C1975B53D00BD3D44 /* Main.storyboard */,
-				FC41E91F1975B53D00BD3D44 /* ViewController.h */,
-				FC41E9201975B53D00BD3D44 /* ViewController.m */,
+				FC41E91F1975B53D00BD3D44 /* aViewController.h */,
+				FC41E9201975B53D00BD3D44 /* aViewController.m */,
+				FCB9F43A19801AB800050BCF /* bTableViewController.h */,
+				FCB9F43B19801AB800050BCF /* bTableViewController.m */,
+				FCB9F4461980605A00050BCF /* baTableViewCell.h */,
+				FCB9F4451980605A00050BCF /* baTableViewCell.m */,
+				FCB9F43F19803D1000050BCF /* cEventViewController.h */,
+				FCB9F44019803D1000050BCF /* cEventViewController.m */,
+				FC41E93F1975B6B100BD3D44 /* Common.h */,
+				FC41E9401975B6B100BD3D44 /* Common.m */,
 				FC41E9221975B53D00BD3D44 /* Images.xcassets */,
 				FC41E9111975B53D00BD3D44 /* Supporting Files */,
 			);
@@ -126,6 +178,16 @@
 		FC41E9111975B53D00BD3D44 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCB9F4481980679E00050BCF /* Dosis-SemiBold.otf */,
+				FCB9F4491980679E00050BCF /* Dosis-Regular.otf */,
+				FCB9F44A1980679E00050BCF /* Dosis-Medium.otf */,
+				FCB9F44B1980679E00050BCF /* Dosis-Light.otf */,
+				FCB9F44C1980679E00050BCF /* Dosis-ExtraLight.otf */,
+				FCB9F44D1980679E00050BCF /* Dosis-ExtraBold.otf */,
+				FCB9F44E1980679E00050BCF /* Dosis-Bold.otf */,
+				FC41E9461975B77A00BD3D44 /* logos-03.png */,
+				FC41E9421975B75A00BD3D44 /* TurningWhite.png */,
+				FC41E9431975B75A00BD3D44 /* logos-04.png */,
 				FC41E9121975B53D00BD3D44 /* SDSApp2-Info.plist */,
 				FC41E9131975B53D00BD3D44 /* InfoPlist.strings */,
 				FC41E9161975B53D00BD3D44 /* main.m */,
@@ -228,9 +290,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB9F44F198067C100050BCF /* Dosis-SemiBold.otf in Resources */,
+				FCB9F450198067C100050BCF /* Dosis-Regular.otf in Resources */,
+				FCB9F451198067C100050BCF /* Dosis-Medium.otf in Resources */,
+				FCB9F452198067C100050BCF /* Dosis-Light.otf in Resources */,
+				FCB9F453198067C100050BCF /* Dosis-ExtraLight.otf in Resources */,
+				FCB9F454198067C100050BCF /* Dosis-ExtraBold.otf in Resources */,
+				FCB9F455198067C100050BCF /* Dosis-Bold.otf in Resources */,
+				FCC287CB1985609500075737 /* Main.storyboard in Resources */,
 				FC41E9231975B53D00BD3D44 /* Images.xcassets in Resources */,
 				FC41E9151975B53D00BD3D44 /* InfoPlist.strings in Resources */,
-				FC41E91E1975B53D00BD3D44 /* Main.storyboard in Resources */,
+				FC41E9471975B77A00BD3D44 /* logos-03.png in Resources */,
+				FC41E9451975B75A00BD3D44 /* logos-04.png in Resources */,
+				FC41E9441975B75A00BD3D44 /* TurningWhite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +321,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC41E9211975B53D00BD3D44 /* ViewController.m in Sources */,
+				FC41E9411975B6B100BD3D44 /* Common.m in Sources */,
+				FC41E9211975B53D00BD3D44 /* aViewController.m in Sources */,
+				FCB9F43C19801AB800050BCF /* bTableViewController.m in Sources */,
 				FC41E91B1975B53D00BD3D44 /* AppDelegate.m in Sources */,
 				FC41E9171975B53D00BD3D44 /* main.m in Sources */,
+				FCB9F4471980605A00050BCF /* baTableViewCell.m in Sources */,
+				FCB9F44119803D1000050BCF /* cEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,20 +358,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		FC41E91C1975B53D00BD3D44 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC41E91D1975B53D00BD3D44 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC41E9321975B53E00BD3D44 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FC41E9331975B53E00BD3D44 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FCC287C91985609500075737 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCC287CA1985609500075737 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -456,6 +532,7 @@
 				FC41E93B1975B53E00BD3D44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC41E93C1975B53E00BD3D44 /* Build configuration list for PBXNativeTarget "SDSApp2Tests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +541,7 @@
 				FC41E93E1975B53E00BD3D44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
