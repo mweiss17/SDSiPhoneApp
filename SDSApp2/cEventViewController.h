@@ -11,7 +11,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import "Common.h"
-@interface cEventViewController : UIViewController<UIAlertViewDelegate, AVAudioPlayerDelegate>{
+@interface cEventViewController : UIViewController<UIAlertViewDelegate, AVAudioPlayerDelegate, CLLocationManagerDelegate>{
 	MKMapView *mapView;
 	@public float latitude;
 	@public float longitude;
@@ -28,6 +28,15 @@
 	NSURL *songURL;
 	NSArray *autoResults;
 	IBOutlet UIView *volumeView;
+	CLLocationDegrees userlat;
+	CLLocationDegrees userlong;
+	NSTimer *userLocTimer;
+	MKUserLocation *userLocation;
+	CLLocationManager *locationManager;
+	BOOL setSpan;
+	UISlider *slider;
+	UILabel *playtimeLabel;
+	UILabel *durationLabel;
 }
 @property double startprop;
 

@@ -35,6 +35,7 @@
 		FCB9F453198067C100050BCF /* Dosis-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F44C1980679E00050BCF /* Dosis-ExtraLight.otf */; };
 		FCB9F454198067C100050BCF /* Dosis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F44D1980679E00050BCF /* Dosis-ExtraBold.otf */; };
 		FCB9F455198067C100050BCF /* Dosis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9F44E1980679E00050BCF /* Dosis-Bold.otf */; };
+		FCBD3BF1199137D3002D9CA0 /* dMusicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBD3BF0199137D3002D9CA0 /* dMusicTableViewController.m */; };
 		FCC287C619842C5A00075737 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC287C519842C5A00075737 /* MediaPlayer.framework */; };
 		FCC287C819853F3B00075737 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC287C719853F3B00075737 /* AVFoundation.framework */; };
 		FCC287CB1985609500075737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC287C91985609500075737 /* Main.storyboard */; };
@@ -74,7 +75,7 @@
 		FC41E9421975B75A00BD3D44 /* TurningWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TurningWhite.png; sourceTree = "<group>"; };
 		FC41E9431975B75A00BD3D44 /* logos-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logos-04.png"; sourceTree = "<group>"; };
 		FC41E9461975B77A00BD3D44 /* logos-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logos-03.png"; sourceTree = "<group>"; };
-		FCB9F43A19801AB800050BCF /* bTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bTableViewController.h; path = ../bTableViewController.h; sourceTree = "<group>"; };
+		FC81E43019883E2D006B6CD5 /* bTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bTableViewController.h; sourceTree = "<group>"; };
 		FCB9F43B19801AB800050BCF /* bTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bTableViewController.m; path = ../bTableViewController.m; sourceTree = "<group>"; };
 		FCB9F43D198023A300050BCF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FCB9F43F19803D1000050BCF /* cEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cEventViewController.h; sourceTree = "<group>"; };
@@ -88,6 +89,8 @@
 		FCB9F44C1980679E00050BCF /* Dosis-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-ExtraLight.otf"; path = "../../../../Downloads/dosis/Dosis-ExtraLight.otf"; sourceTree = "<group>"; };
 		FCB9F44D1980679E00050BCF /* Dosis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-ExtraBold.otf"; path = "../../../../Downloads/dosis/Dosis-ExtraBold.otf"; sourceTree = "<group>"; };
 		FCB9F44E1980679E00050BCF /* Dosis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Dosis-Bold.otf"; path = "../../../../Downloads/dosis/Dosis-Bold.otf"; sourceTree = "<group>"; };
+		FCBD3BEF199137D3002D9CA0 /* dMusicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dMusicTableViewController.h; sourceTree = "<group>"; };
+		FCBD3BF0199137D3002D9CA0 /* dMusicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dMusicTableViewController.m; sourceTree = "<group>"; };
 		FCC287C519842C5A00075737 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FCC287C719853F3B00075737 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FCC287CA1985609500075737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,12 +164,14 @@
 				FC41E91A1975B53D00BD3D44 /* AppDelegate.m */,
 				FC41E91F1975B53D00BD3D44 /* aViewController.h */,
 				FC41E9201975B53D00BD3D44 /* aViewController.m */,
-				FCB9F43A19801AB800050BCF /* bTableViewController.h */,
+				FC81E43019883E2D006B6CD5 /* bTableViewController.h */,
 				FCB9F43B19801AB800050BCF /* bTableViewController.m */,
 				FCB9F4461980605A00050BCF /* baTableViewCell.h */,
 				FCB9F4451980605A00050BCF /* baTableViewCell.m */,
 				FCB9F43F19803D1000050BCF /* cEventViewController.h */,
 				FCB9F44019803D1000050BCF /* cEventViewController.m */,
+				FCBD3BEF199137D3002D9CA0 /* dMusicTableViewController.h */,
+				FCBD3BF0199137D3002D9CA0 /* dMusicTableViewController.m */,
 				FC41E93F1975B6B100BD3D44 /* Common.h */,
 				FC41E9401975B6B100BD3D44 /* Common.m */,
 				FC41E9221975B53D00BD3D44 /* Images.xcassets */,
@@ -323,6 +328,7 @@
 			files = (
 				FC41E9411975B6B100BD3D44 /* Common.m in Sources */,
 				FC41E9211975B53D00BD3D44 /* aViewController.m in Sources */,
+				FCBD3BF1199137D3002D9CA0 /* dMusicTableViewController.m in Sources */,
 				FCB9F43C19801AB800050BCF /* bTableViewController.m in Sources */,
 				FC41E91B1975B53D00BD3D44 /* AppDelegate.m in Sources */,
 				FC41E9171975B53D00BD3D44 /* main.m in Sources */,

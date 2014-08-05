@@ -58,7 +58,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="eventCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="113" id="8OH-nI-ZRt" customClass="baTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="113"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="113"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8OH-nI-ZRt" id="63m-4R-h4m">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="112"/>
@@ -91,7 +91,7 @@
                                     <outlet property="dateLabel" destination="8Zp-xi-hrK" id="MxY-qz-kJI"/>
                                     <outlet property="locationLabel" destination="JpH-H9-YHe" id="6TK-e7-ZGi"/>
                                     <outlet property="titleLabel" destination="bLa-80-aEH" id="0vc-h0-nK1"/>
-                                    <segue destination="1DY-El-9KF" kind="push" id="ZFA-EU-atm"/>
+                                    <segue destination="1DY-El-9KF" kind="push" identifier="eventDetail" id="ZFA-EU-atm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="2644" y="109"/>
         </scene>
-        <!--C Event View Controller-->
+        <!--C Event View Controller - Event Details-->
         <scene sceneID="WBn-WR-73h">
             <objects>
-                <viewController id="1DY-El-9KF" customClass="cEventViewController" sceneMemberID="viewController">
+                <viewController title="Event Details" id="1DY-El-9KF" customClass="cEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2kh-Ps-IXs"/>
                         <viewControllerLayoutGuide type="bottom" id="mIa-I9-k75"/>
@@ -133,20 +133,52 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="wNP-LI-XYm"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="countdownTimer" destination="gqv-Bo-FVl" id="ajv-LC-bBT"/>
                         <outlet property="volumeView" destination="GKE-q8-Pac" id="Snm-EC-brM"/>
+                        <segue destination="Hrd-hu-5l3" kind="push" identifier="pickTrack" id="lbx-he-fyT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMd-TR-vW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3129" y="109"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="jgo-FG-JNI">
+            <objects>
+                <tableViewController id="Hrd-hu-5l3" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="J4b-a9-oAf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8Cs-CX-G36">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Cs-CX-G36" id="IfS-be-mj3">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hrd-hu-5l3" id="8Nl-Z6-FAC"/>
+                            <outlet property="delegate" destination="Hrd-hu-5l3" id="4gg-rv-74D"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="cpv-nb-QKa"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtE-yv-JPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3564" y="105"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="i5C-f8-DZQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="z7a-ef-rwg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z7a-ef-rwg" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPt-cr-Kud">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

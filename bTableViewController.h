@@ -16,5 +16,6 @@
 	cEventViewController *dest;
 }
 @property (nonatomic, retain) NSArray *eventDict;
+@property (nonatomic, retain) MKUserLocation *userLocation;
 @end
 

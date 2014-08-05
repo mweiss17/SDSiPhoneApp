@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Common.h"
+#import "bTableViewController.h"
 
-@interface aViewController : UIViewController{
+@interface aViewController : UIViewController<NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate>{
 	UIImageView* mIntroTopImageView;
 	UIImageView* mIntroBottomImageView;
-	
+	//MKUserLocation *userLocation;
+	BOOL requestReturned;
 }
-
+@property (nonatomic, retain) NSArray *eventDict;
 @property (strong, retain) IBOutlet UIImageView *IntroTopImageView;
 @property (strong, retain) IBOutlet UIImageView *IntroBottomImageView;
 @property (strong, nonatomic) IBOutlet UIButton *ChangeView;

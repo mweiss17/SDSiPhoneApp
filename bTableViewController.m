@@ -27,6 +27,7 @@ NSArray *keys;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	[self.navigationController setNavigationBarHidden:YES];   //it hides
 	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(320, 75, 320, 75)];
 	UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(320, 75, 320, 75)];
 	labelView.text = @"SDS Upcoming Events";
@@ -35,49 +36,7 @@ NSArray *keys;
 	[headerView addSubview:labelView];
 	[labelView setCenter:CGPointMake(headerView.frame.size.width / 2, headerView.frame.size.height / 2)];
 	self.tableView.tableHeaderView = headerView;
-	[self GetIndex];
-}
-
--(void) GetIndex
-{
-    NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate:self delegateQueue: [NSOperationQueue mainQueue]];
-	
-    NSURL * url = [NSURL URLWithString:@"http://54.187.5.233/appindex.html/"];
-	
-    NSURLSessionDataTask *dataTask = [delegateFreeSession dataTaskWithURL:url
-														completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-		if(error == nil)
-		{
-			self.eventDict = [NSJSONSerialization JSONObjectWithData:data
-														options:kNilOptions
-														  error:&error];
-			for(NSDictionary *item in eventDict) {
-				NSLog (@"nsdic = %@", item);
-			}
-			
-		}
-		[self.tableView reloadData];
-	}];
-    [dataTask resume];
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-didReceiveResponse:(NSURLResponse *)response
- completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler
-{
-    completionHandler(NSURLSessionResponseAllow);
-}
-
-/* Sent when data is available for the delegate to consume.  It is
- * assumed that the delegate will retain and not copy the data.  As
- * the data may be dis-contiguous, you should use
- * [NSData enumerateByteRangesUsingBlock:] to access it.
- */
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-    didReceiveData:(NSData *)data
-{
-    //data: response from the server.
+	[self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,7 +54,7 @@ didReceiveResponse:(NSURLResponse *)response
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	NSLog(@"number of Events = %d", [eventDict count]);
+	NSLog(@"number of Events = %d", (NSUInteger)[eventDict count]);
 	return [eventDict count];
 }
 
@@ -168,12 +127,12 @@ didReceiveResponse:(NSURLResponse *)response
 	
 	//Process songTitle
 	NSString *urlSongTitle = [jsonDict objectForKey:@"songTitle"];
-	NSLog (@"songTitle = %@", urlSongTitle);
 
 	NSArray *songTitleSplit = [urlSongTitle componentsSeparatedByString:@"/"];
 	NSString *songTitleProcessing = [songTitleSplit lastObject];
 	NSArray *songTitleSplit2 = [songTitleProcessing componentsSeparatedByString:@"."];
 	NSString *songTitle = songTitleSplit2[0];
+	NSLog (@"songTitle = %@", songTitle);
 
 	dest->songTitle = songTitle;
 	dest->eventTitle = title;

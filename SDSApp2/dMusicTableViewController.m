@@ -1,18 +1,18 @@
 //
-//  BTableViewController.m
+//  dMusicTableViewController.m
 //  SDSApp2
 //
-//  Created by Martin Weiss 1 on 2014-07-23.
+//  Created by Martin Weiss 1 on 2014-08-05.
 //  Copyright (c) 2014 Martin Weiss. All rights reserved.
 //
 
-#import "BTableViewController.h"
+#import "dMusicTableViewController.h"
 
-@interface BTableViewController ()
+@interface dMusicTableViewController ()
 
 @end
 
-@implementation BTableViewController
+@implementation dMusicTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
