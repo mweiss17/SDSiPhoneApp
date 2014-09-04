@@ -10,8 +10,9 @@
 #import <MapKit/MapKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
+#import "dMusicTableViewController.h"
 #import "Common.h"
-@interface cEventViewController : UIViewController<UIAlertViewDelegate, AVAudioPlayerDelegate, CLLocationManagerDelegate>{
+@interface cEventViewController : UIViewController<UIAlertViewDelegate, AVAudioPlayerDelegate, CLLocationManagerDelegate, PassInformation>{
 	MKMapView *mapView;
 	@public float latitude;
 	@public float longitude;

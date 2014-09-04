@@ -27,6 +27,11 @@ NSArray *keys;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	[self intializeGraphics];
+	[self.tableView reloadData];
+}
+
+- (void) intializeGraphics{
 	[self.navigationController setNavigationBarHidden:YES];   //it hides
 	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(320, 75, 320, 75)];
 	UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(320, 75, 320, 75)];
@@ -36,9 +41,7 @@ NSArray *keys;
 	[headerView addSubview:labelView];
 	[labelView setCenter:CGPointMake(headerView.frame.size.width / 2, headerView.frame.size.height / 2)];
 	self.tableView.tableHeaderView = headerView;
-	[self.tableView reloadData];
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -54,7 +57,7 @@ NSArray *keys;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	NSLog(@"number of Events = %d", (NSUInteger)[eventDict count]);
+	NSLog(@"number of Events = %lu", (unsigned long)[eventDict count]);
 	return [eventDict count];
 }
 

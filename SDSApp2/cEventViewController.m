@@ -26,6 +26,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	NSError *sessionError = nil;
+    [[AVAudioSession sharedInstance] setDelegate:self];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+	
+    // Change the default output audio route
+    UInt32 doChangeDefaultRoute = 1;
+    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
+							sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
+
+	
 	[self.navigationController setNavigationBarHidden:NO];   //it hides
 	locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -37,29 +48,16 @@
 	[self createMapView];
 	[self createVolumeView];
 	[self checkForTrack];
-	[NSTimer scheduledTimerWithTimeInterval:1.0
-									 target:self
-								   selector:@selector(calcTime)
-								   userInfo:nil
-									repeats:YES];
-	
-	_updatePlayerTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
-														  target:self
-														selector:@selector(updatePlayer)
-														userInfo:nil
-														 repeats:YES];
-	
 }
 
-- (void) pickTrack{
-	//Open a new tableview with all the songs
-	[self performSegueWithIdentifier:@"pickTrack" sender:self];
-	//Implement search controls
-	//Grab the correct song
-	// return to the this screen
-	
+/*****************************************************/
+///////////////////////// //////////////////*//////////
+///////////////////////      //////////////*///////////
+/////////////////// PLAYER VIEW STUFF ////*////////////
+///////////////////////      ////////////*/////////////
+///////////////////////// //////////////*//////////////
+/*****************************************************/
 
-}
 
 - (void)createVolumeView{
 	volumeView.backgroundColor = [Common colorWithHexString:@"0EA48B"];
@@ -84,99 +82,31 @@
     slider.value = 0.0;
     [self->volumeView addSubview:slider];
 
-	//create labels
-	self->durationLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 75, 100, 20)];
-	self->playtimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 100, 20)];
+}
+
+- (void) createTimeLabels{
+	self->playtimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 75, 100, 20)];
+	self->durationLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 100, 20)];
 	[self->volumeView addSubview:playtimeLabel];
 	[self->volumeView addSubview:durationLabel];
 	[self->volumeView bringSubviewToFront:playtimeLabel];
-
 }
 
--(void) initializeMapView{
-	CGRect r = self.view.bounds;
-	r.size.height = 350;
-	self->mapView = [[MKMapView alloc] initWithFrame:r];
-	mapView.mapType = MKMapTypeStandard;
-	mapView.showsUserLocation = YES;
-	mapView.userTrackingMode = YES;
+
+/*****************************************************/
+///////////////////////// //////////////////*//////////
+///////////////////////      //////////////*///////////
+//////////// PLAYER PROGRAMMATIC STUFF ///*////////////
+///////////////////////      ////////////*/////////////
+///////////////////////// //////////////*//////////////
+/*****************************************************/
+- (void) pickTrack{
+	[self performSegueWithIdentifier:@"pickTrack" sender:self];
 }
 
-//grab the user location
--(void)locationManager:(CLLocationManager *)manager
-   didUpdateToLocation:(CLLocation *)newLocation
-		  fromLocation:(CLLocation *)oldLocation
-{
-	self->userLocation = mapView.userLocation;
-	self->userlat = newLocation.coordinate.latitude;
-	self->userlong = newLocation.coordinate.longitude;
-	//only adjust the region of the map once
-	if(!self->setSpan){
-		self->setSpan = TRUE;
-		[self createMapView];
-	}
-}
-
-- (void)createMapView{
-	//create the point for the destination
-	CLLocationCoordinate2D coord = {.latitude =  self->latitude, .longitude =  self->longitude};
-	MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = coord;
-    point.title = self->eventTitle;
-    point.subtitle = self->location;
-	[self->mapView addAnnotation:point];
-	[mapView selectAnnotation:point animated:YES];
-
-	//calculate the size of the region for the map
-	CLLocationDegrees latitudeRegion = fabs(userlat-latitude);
-	CLLocationDegrees longitudeRegion = fabs(userlong-longitude);
-    latitudeRegion = (int)(latitudeRegion*2.5);
-	longitudeRegion = (int)(longitudeRegion*2.5);
-	latitudeRegion = (int)latitudeRegion%360;
-	longitudeRegion = (int)longitudeRegion%360;
-
-	MKCoordinateSpan span = {latitudeRegion, longitudeRegion};
-	MKCoordinateRegion region = {{userlat, userlong}, span};
-	[mapView setRegion:region];
-	
-	[self.view addSubview:mapView];
-}
-
-- (void)calcTime
-{
-	NSTimeInterval now = [[NSDate date]timeIntervalSince1970];
-	if ([self->player rate] != 0.0){
-	}
-
-	self.eta = now - _startprop;
-	if(self.eta <0){
-		self.eta = -self.eta;
-		NSString *hours = [NSString stringWithFormat:@"%uh ", (int) _eta/3600];
-		_eta = (int)_eta % 3600;
-		NSString *mins = [NSString stringWithFormat:@"%um ", (int) _eta/60];
-		_eta = (int)_eta % 60;
-		NSString *seconds = [NSString stringWithFormat:@"%us ", (int) _eta];
-		
-		NSMutableString *time = [[NSMutableString alloc] initWithString:hours];
-		
-		[time appendString:mins];
-		[time appendString:seconds];
-		self->countdownTimer.text = time;
-		return;
-	}
-	NSLog(@"eta = %f", _eta);
-	NSString *hours = [NSString stringWithFormat:@"%uh ", (int) _eta/3600];
-	_eta = (int)_eta % 3600;
-	NSString *mins = [NSString stringWithFormat:@"%um ", (int) _eta/60];
-	_eta = (int)_eta % 60;
-	NSString *seconds = [NSString stringWithFormat:@"%us ", (int) _eta];
-	
-	NSMutableString *time = [[NSMutableString alloc] initWithString:hours];
-	
-	[time appendString:mins];
-	[time appendString:seconds];
-	self->countdownTimer.text = time;
-	
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	dMusicTableViewController *childVC = segue.destinationViewController;
+	childVC.delegate = self;
 }
 
 - (void)checkForTrack
@@ -221,18 +151,19 @@
 	[alert show];
 	
 	//found song locally, and play it
+	self->discoTrack = [autoResults objectAtIndex:0];
 	[self loadAndPlayLocalTrack];
 }
 
 - (void) loadAndPlayLocalTrack{
-	MPMediaItem *song = [autoResults objectAtIndex:0];
-	songURL = [song valueForProperty:MPMediaItemPropertyAssetURL];
+	[self createTimeLabels];
+	songURL = [self->discoTrack valueForProperty:MPMediaItemPropertyAssetURL];
 	AVURLAsset *urlAsset = [[AVURLAsset alloc] initWithURL:songURL options:nil];
 	NSArray *keyArray = [[NSArray alloc] initWithObjects:@"tracks", nil];
 	[urlAsset loadValuesAsynchronouslyForKeys:keyArray completionHandler:^{
 		
 		AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithAsset:urlAsset];
-
+		
 		player = nil;
 		player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
 		
@@ -250,40 +181,45 @@
 	
     if([title isEqualToString:@"Stream"])
     {
+		NSLog(@"Stream.");
 		//Get the Stream URL
 		NSURL *url = [NSURL URLWithString:streamURL];
 		self->avAsset = [AVURLAsset URLAssetWithURL:url options:nil];
 		self->playerItem = [AVPlayerItem playerItemWithAsset:avAsset];
 		self->player = [AVPlayer playerWithPlayerItem:playerItem];
 		[self->player play];
+		[self createTimeLabels];
+		[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
     }
     else if([title isEqualToString:@"Pick Track to Synchronize"])
     {
         NSLog(@"Pick Track to Synchronize.");
 		[self pickTrack];
     }
-	
 }
 
-- (void)updatePlayer{
-	if (_eta >= 0){
-		[_updatePlayerTimer invalidate];
-		_updatePlayerTimer = nil;
-		[NSTimer scheduledTimerWithTimeInterval:1.0
-										 target:self
-									   selector:@selector(updateSlider)
-									   userInfo:nil
-										repeats:YES];
-	}
-}
 - (void) updateSlider{
 	AVPlayerItem *currentItem = player.currentItem;
 	Float64 currentTime = CMTimeGetSeconds(currentItem.currentTime); //playing time
 	Float64 duration = CMTimeGetSeconds(currentItem.duration); //total time
+	
 	//create a pair of labels
-	self->playtimeLabel.text = [NSString stringWithFormat:@"%f", currentTime];
-	self->durationLabel.text = [NSString stringWithFormat:@"%f", duration];
+	self->playtimeLabel.text = [self floatToText:currentTime];
+	self->durationLabel.text = [self floatToText:duration];
 	self->slider.value = currentTime/duration;
+}
+
+-(NSMutableString*) floatToText: (Float64)time{
+	NSString *hours = [NSString stringWithFormat:@"%uh ", (int) time/3600];
+	time = (int)time % 3600;
+	NSString *mins = [NSString stringWithFormat:@"%um ", (int) time/60];
+	time = (int)time % 60;
+	NSString *seconds = [NSString stringWithFormat:@"%us ", (int) time];
+	NSMutableString *timeString = [[NSMutableString alloc] initWithString:hours];
+	
+	[timeString appendString:mins];
+	[timeString appendString:seconds];
+	return timeString;
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
@@ -295,11 +231,72 @@
     [super viewWillDisappear:animated];
 }
 
-- (void)didReceiveMemoryWarning
+//delegate function implemented
+//this gets called from the second viewconroller when the view disappears
+- (void) setTrack:(MPMediaItem *)song
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	self->discoTrack = song;
+	[self loadAndPlayLocalTrack];
 }
 
+
+/*****************************************************/
+///////////////////////// //////////////////*//////////
+///////////////////////      //////////////*///////////
+/////////////////// MAP VIEW STUFF ///////*////////////
+///////////////////////      ////////////*/////////////
+///////////////////////// //////////////*//////////////
+/*****************************************************/
+
+-(void) initializeMapView{
+	CGRect r = self.view.bounds;
+	r.size.height = 350;
+	self->mapView = [[MKMapView alloc] initWithFrame:r];
+	mapView.mapType = MKMapTypeStandard;
+	mapView.showsUserLocation = YES;
+	mapView.userTrackingMode = YES;
+}
+
+//grab the user location
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+		  fromLocation:(CLLocation *)oldLocation
+{
+	self->userLocation = mapView.userLocation;
+	self->userlat = newLocation.coordinate.latitude;
+	self->userlong = newLocation.coordinate.longitude;
+	//only adjust the region of the map once
+	if(!self->setSpan){
+		self->setSpan = TRUE;
+		[self createMapView];
+	}
+}
+
+- (void)createMapView{
+	//create the point for the destination
+	CLLocationCoordinate2D coord = {.latitude =  self->latitude, .longitude =  self->longitude};
+	MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = coord;
+    point.title = self->eventTitle;
+    point.subtitle = self->location;
+	[self->mapView addAnnotation:point];
+	[mapView selectAnnotation:point animated:YES];
+	
+	//calculate the size of the region for the map
+	CLLocationDegrees latitudeRegion = fabs(userlat-latitude);
+	CLLocationDegrees longitudeRegion = fabs(userlong-longitude);
+    latitudeRegion = (int)(latitudeRegion*2.5);
+	longitudeRegion = (int)(longitudeRegion*2.5);
+	latitudeRegion = (int)latitudeRegion%360;
+	longitudeRegion = (int)longitudeRegion%360;
+	
+	MKCoordinateSpan span = {latitudeRegion, longitudeRegion};
+	MKCoordinateRegion region = {{userlat, userlong}, span};
+	[mapView setRegion:region];
+	
+	[self.view addSubview:mapView];
+}
+
+- (void)didReceiveMemoryWarning { [super didReceiveMemoryWarning]; }
 
 @end

@@ -13,7 +13,6 @@
 @interface aViewController : UIViewController<NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate>{
 	UIImageView* mIntroTopImageView;
 	UIImageView* mIntroBottomImageView;
-	//MKUserLocation *userLocation;
 	BOOL requestReturned;
 }
 @property (nonatomic, retain) NSArray *eventDict;

@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface dMusicTableViewController : UITableViewController
+@protocol PassInformation <NSObject>
+-(void) setTrack:(MPMediaItem*)song;
+@end
 
+@interface dMusicTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>{
+	MPMediaItem *song;
+}
+@property (nonatomic, unsafe_unretained) id<PassInformation> delegate;
 @end

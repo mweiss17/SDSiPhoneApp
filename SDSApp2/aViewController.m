@@ -17,9 +17,41 @@ NSTimer *timer;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	//preset
 	self->requestReturned = FALSE;
+	
+	//make asynchronous request for event info
 	[self GetIndex];
 
+	[self generateGraphics];
+}
+
+
+-(void) GetIndex
+{
+    NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate:self delegateQueue: [NSOperationQueue mainQueue]];
+	
+    NSURL * url = [NSURL URLWithString:@"http://silentdiscosquad.com/appindex.html/"];
+	
+    NSURLSessionDataTask *dataTask = [delegateFreeSession dataTaskWithURL:url
+														completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+															if(error == nil)
+															{
+																self.eventDict = [NSJSONSerialization JSONObjectWithData:data
+																												 options:kNilOptions
+																												   error:&error];
+																for(NSDictionary *item in _eventDict) {
+																	NSLog (@"nsdic = %@", item);
+																}
+																
+															}
+															[self nextAction];
+														}];
+    [dataTask resume];
+}
+
+- (void)generateGraphics{
 	self.IntroTopImageView.contentMode = UIViewContentModeCenter;
 	self.IntroBottomImageView.contentMode = UIViewContentModeCenter;
 	
@@ -42,31 +74,18 @@ NSTimer *timer;
 	
 	self.IntroTopImageView.image = newImage1;
 	self.IntroBottomImageView.image = newImage2;
+
+}
+//switch to next screen upon loading
+-(void)nextAction
+{
+	[_ChangeView sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
-
--(void) GetIndex
-{
-    NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate:self delegateQueue: [NSOperationQueue mainQueue]];
-	
-    NSURL * url = [NSURL URLWithString:@"http://54.187.5.233/appindex.html/"];
-	
-    NSURLSessionDataTask *dataTask = [delegateFreeSession dataTaskWithURL:url
-														completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-															if(error == nil)
-															{
-																self.eventDict = [NSJSONSerialization JSONObjectWithData:data
-																												 options:kNilOptions
-																												   error:&error];
-																for(NSDictionary *item in _eventDict) {
-																	NSLog (@"nsdic = %@", item);
-																}
-																
-															}
-															[self nextAction];
-														}];
-    [dataTask resume];
+//pass the info to the next screen
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	bTableViewController *nextViewController = [[[segue destinationViewController] viewControllers] objectAtIndex:0];
+	nextViewController.eventDict = [self eventDict];//the array you want to pass
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
@@ -75,30 +94,6 @@ didReceiveResponse:(NSURLResponse *)response
 {
     completionHandler(NSURLSessionResponseAllow);
 }
-
-/* Sent when data is available for the delegate to consume.  It is
- * assumed that the delegate will retain and not copy the data.  As
- * the data may be dis-contiguous, you should use
- * [NSData enumerateByteRangesUsingBlock:] to access it.
- */
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-    didReceiveData:(NSData *)data
-{
-    //
-}
-
-
--(void)nextAction
-{
-	[_ChangeView sendActionsForControlEvents:UIControlEventTouchUpInside];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	bTableViewController *nextViewController = [[[segue destinationViewController] viewControllers] objectAtIndex:0];
-	nextViewController.eventDict = [self eventDict];//the array you want to pass
-	//nextViewController.userLocation = self->userLocation;//the array you want to pass
-	}
-
 
 - (void)didReceiveMemoryWarning
 {

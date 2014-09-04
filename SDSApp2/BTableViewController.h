@@ -8,7 +8,6 @@
 @interface bTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>{
 	cEventViewController *dest;
 }
-//@property (nonatomic, retain) MKUserLocation *userLocation;
 @property (nonatomic, retain) NSArray *eventDict;
 @end
 
