@@ -20,78 +20,19 @@
     if (self) {
         // Custom initialization
     }
+	
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-	NSError *sessionError = nil;
-    [[AVAudioSession sharedInstance] setDelegate:self];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
-	
-    // Change the default output audio route
-    UInt32 doChangeDefaultRoute = 1;
-    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
-							sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
-
-	
-	[self.navigationController setNavigationBarHidden:NO];   //it hides
-	locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-	locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
-    [locationManager startUpdatingLocation];
-	self->setSpan = FALSE;
-	
+	[self initializeAudio];
 	[self initializeMapView];
 	[self createMapView];
 	[self createVolumeView];
 	[self checkForTrack];
 }
-
-/*****************************************************/
-///////////////////////// //////////////////*//////////
-///////////////////////      //////////////*///////////
-/////////////////// PLAYER VIEW STUFF ////*////////////
-///////////////////////      ////////////*/////////////
-///////////////////////// //////////////*//////////////
-/*****************************************************/
-
-
-- (void)createVolumeView{
-	volumeView.backgroundColor = [Common colorWithHexString:@"0EA48B"];
-	
-	//put the trackname on the view
-	UILabel *tracknameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
-	tracknameLabel.text = self->songTitle;
-	tracknameLabel.textAlignment = NSTextAlignmentCenter;
-	[tracknameLabel setTextColor:[UIColor whiteColor]];
-	[tracknameLabel setBackgroundColor:[UIColor clearColor]];
-	[tracknameLabel setFont:[UIFont fontWithName: @"Dosis-Bold" size: 14.0f]];
-	[self->volumeView addSubview:tracknameLabel];
-
-	//create slider
-	CGRect frame = CGRectMake(30.0, 40.0, 260.0, 10.0);
-    self->slider = [[UISlider alloc] initWithFrame:frame];
-    //[slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
-    [slider setBackgroundColor:[UIColor clearColor]];
-    slider.minimumValue = 0.0;
-    slider.maximumValue = 1.0;
-    slider.continuous = YES;
-    slider.value = 0.0;
-    [self->volumeView addSubview:slider];
-
-}
-
-- (void) createTimeLabels{
-	self->playtimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 75, 100, 20)];
-	self->durationLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 100, 20)];
-	[self->volumeView addSubview:playtimeLabel];
-	[self->volumeView addSubview:durationLabel];
-	[self->volumeView bringSubviewToFront:playtimeLabel];
-}
-
 
 /*****************************************************/
 ///////////////////////// //////////////////*//////////
@@ -162,10 +103,9 @@
 	NSArray *keyArray = [[NSArray alloc] initWithObjects:@"tracks", nil];
 	[urlAsset loadValuesAsynchronouslyForKeys:keyArray completionHandler:^{
 		
-		AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithAsset:urlAsset];
+		self->playerItem = [[AVPlayerItem alloc] initWithAsset:urlAsset];
 		
-		player = nil;
-		player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
+		player = [[AVPlayer alloc] initWithPlayerItem:self->playerItem];
 		
 		while (true) {
 			if (player.status == AVPlayerStatusReadyToPlay && playerItem.status == AVPlayerItemStatusReadyToPlay)
@@ -187,6 +127,9 @@
 		self->avAsset = [AVURLAsset URLAssetWithURL:url options:nil];
 		self->playerItem = [AVPlayerItem playerItemWithAsset:avAsset];
 		self->player = [AVPlayer playerWithPlayerItem:playerItem];
+		double serverTime = [self calculateNetworkLatency];
+		double eta = _startprop - serverTime;
+		NSLog(@"eta=%f", eta);
 		[self->player play];
 		[self createTimeLabels];
 		[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
@@ -249,6 +192,14 @@
 /*****************************************************/
 
 -(void) initializeMapView{
+	
+	[self.navigationController setNavigationBarHidden:NO];   //it hides
+	locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+	locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    [locationManager startUpdatingLocation];
+	self->setSpan = FALSE;
+
 	CGRect r = self.view.bounds;
 	r.size.height = 350;
 	self->mapView = [[MKMapView alloc] initWithFrame:r];
@@ -296,6 +247,117 @@
 	
 	[self.view addSubview:mapView];
 }
+
+-(void) initializeAudio{
+	NSError *sessionError = nil;
+    [[AVAudioSession sharedInstance] setDelegate:self];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+	
+    // Change the default output audio route
+    UInt32 doChangeDefaultRoute = 1;
+    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
+							sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
+}
+
+
+/*****************************************************/
+///////////////////////// //////////////////*//////////
+///////////////////////      //////////////*///////////
+/////////////////// PLAYER VIEW STUFF ////*////////////
+///////////////////////      ////////////*/////////////
+///////////////////////// //////////////*//////////////
+/*****************************************************/
+
+
+- (void)createVolumeView{
+	volumeView.backgroundColor = [Common colorWithHexString:@"0EA48B"];
+	
+	//put the trackname on the view
+	UILabel *tracknameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
+	tracknameLabel.text = self->songTitle;
+	tracknameLabel.textAlignment = NSTextAlignmentCenter;
+	[tracknameLabel setTextColor:[UIColor whiteColor]];
+	[tracknameLabel setBackgroundColor:[UIColor clearColor]];
+	[tracknameLabel setFont:[UIFont fontWithName: @"Dosis-Bold" size: 14.0f]];
+	[self->volumeView addSubview:tracknameLabel];
+	
+	//create slider
+	CGRect frame = CGRectMake(30.0, 40.0, 260.0, 10.0);
+    self->slider = [[UISlider alloc] initWithFrame:frame];
+    //[slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+    [slider setBackgroundColor:[UIColor clearColor]];
+    slider.minimumValue = 0.0;
+    slider.maximumValue = 1.0;
+    slider.continuous = YES;
+    slider.value = 0.0;
+    [self->volumeView addSubview:slider];
+	
+}
+
+- (void) createTimeLabels{
+	self->playtimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 75, 100, 20)];
+	self->durationLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 75, 100, 20)];
+	[self->volumeView addSubview:playtimeLabel];
+	[self->volumeView addSubview:durationLabel];
+	[self->volumeView bringSubviewToFront:playtimeLabel];
+}
+//returns the exact time that the server thinks it is, adjusted for network latency :)
+- (double)calculateNetworkLatency
+{
+	if(self.j < 10)
+	{
+		NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+		NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate:self delegateQueue: [NSOperationQueue mainQueue]];
+		
+		NSURL * url = [NSURL URLWithString:@"http://54.68.113.110/"];
+		self.requestStart = [NSDate date];
+		
+		NSURLSessionDataTask *dataTask = [delegateFreeSession dataTaskWithURL:url
+															completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+																if(error == nil)
+																{
+																	self.serverTimestamp = [NSJSONSerialization JSONObjectWithData:data
+																														   options:kNilOptions
+																															 error:&error];
+																}
+																for(NSDictionary *item in _serverTimestamp) {
+																	self.serverTimestampString = [item valueForKey:@"timeStamp"];
+																}
+																self.serverTimestampString = [self.serverTimestampString stringByReplacingOccurrencesOfString: @"T" withString:@" "];
+																
+																NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+																[formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSSSSS"];
+																self.serverTimestampDate = [formatter dateFromString:self.serverTimestampString];
+																self.serverTimeSinceEpoch = [self.serverTimestampDate timeIntervalSince1970];
+																[self.serverTimestampsArray addObject: [[NSNumber alloc] initWithDouble:self.serverTimeSinceEpoch]];
+																
+																[self.durations addObject: [[NSNumber alloc] initWithDouble:self.requestDuration]];
+																self.requestDuration = [[NSDate date] timeIntervalSinceDate:_requestStart];
+																self.j = self.j + 1;
+																[self calculateNetworkLatency];
+															}];
+		[dataTask resume];
+	}
+	else
+	{
+		float average = 0;
+		for(int i = 2; i < self.j; i++)
+		{
+			NSLog(@"Trial = %i", i);
+			NSLog(@"Duration = %f", [[self.durations objectAtIndex:i]doubleValue]);
+			NSLog(@"ServerTime = %f", [[self.serverTimestampsArray objectAtIndex:i]doubleValue]);
+			
+			average = average + [[self.durations objectAtIndex:i]doubleValue];
+		}
+		average = average/(self.j-2);
+		self.requestDuration = average;
+		self.serverTimeSinceEpoch = [[self.serverTimestampsArray objectAtIndex:(self.j-1)]doubleValue];
+		return self.serverTimeSinceEpoch + self.requestDuration/2.0;
+	}
+	return -193234;
+}
+
+
 
 - (void)didReceiveMemoryWarning { [super didReceiveMemoryWarning]; }
 

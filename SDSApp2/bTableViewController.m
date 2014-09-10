@@ -12,14 +12,13 @@
 @end
 @implementation bTableViewController
 @synthesize eventDict;
-
 NSArray *keys;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-	
+		
     }
     return self;
 }
@@ -27,6 +26,13 @@ NSArray *keys;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+	self.eventDict = appDelegate.eventD;  //..to read
+
+	for(NSDictionary *item in self.eventDict) {
+		NSLog (@"nsdic = %@", item);
+	}
+	
 	[self intializeGraphics];
 	[self.tableView reloadData];
 }
@@ -69,9 +75,9 @@ NSArray *keys;
     if (cell == nil) {
         cell = [[baTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableID];
 	}
-
+	
 	NSDictionary *jsonDict = [eventDict objectAtIndex:indexPath.row];
-
+	
 	//set cell title
 	NSString *title = [jsonDict objectForKey:@"title"];
 	NSString *location = [jsonDict objectForKey:@"location"];
@@ -89,8 +95,8 @@ NSArray *keys;
 	cell.dateLabel.text = myDateString;
 	cell.titleLabel.text = title;
 	cell.locationLabel.text = location;
-
-
+	
+	
 	//cell formatting
 	cell.backgroundColor = [Common colorWithHexString:@"0e1633"];
 	cell.dateLabel.font = [UIFont fontWithName:@"Dosis-Bold" size:20];
@@ -100,7 +106,7 @@ NSArray *keys;
 	cell.titleLabel.textColor = [Common colorWithHexString: @"#697880"];
 	cell.locationLabel.textColor = [Common colorWithHexString: @"#697880"];
 	NSLog (@"hiii");
-
+	
     return cell;
 }
 
@@ -118,25 +124,17 @@ NSArray *keys;
 	NSString *location = [jsonDict objectForKey:@"location"];
 	NSString *start = [jsonDict objectForKey:@"start"];
 	
-	//Process Start Time and put into myDateString
 	double date = start.doubleValue +(4*3600);
-	NSLog (@"date1 = %f", date);
-	NSDate *messageDate = [NSDate dateWithTimeIntervalSince1970:date];
-	NSLog (@"date2 = %f", date);
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-	[dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
-	NSString *myDateString = [dateFormatter stringFromDate:messageDate];
 	
 	//Process songTitle
 	NSString *urlSongTitle = [jsonDict objectForKey:@"songTitle"];
-
+	
 	NSArray *songTitleSplit = [urlSongTitle componentsSeparatedByString:@"/"];
 	NSString *songTitleProcessing = [songTitleSplit lastObject];
 	NSArray *songTitleSplit2 = [songTitleProcessing componentsSeparatedByString:@"."];
 	NSString *songTitle = songTitleSplit2[0];
 	NSLog (@"songTitle = %@", songTitle);
-
+	
 	dest->songTitle = songTitle;
 	dest->eventTitle = title;
 	dest->location = location;

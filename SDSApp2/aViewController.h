@@ -17,7 +17,6 @@
 }
 @property (nonatomic, retain) NSArray *eventDict;
 @property (strong, retain) IBOutlet UIImageView *IntroTopImageView;
-@property (strong, retain) IBOutlet UIImageView *IntroBottomImageView;
 @property (strong, nonatomic) IBOutlet UIButton *ChangeView;
 
 @end

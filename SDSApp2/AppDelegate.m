@@ -11,11 +11,39 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+{	
     // Override point for customization after application launch.
-    return YES;
+	[self GetIndex];
+	return YES;
+
 }
-							
+
+-(BOOL) GetIndex
+{
+	NSURLSession *defaultSession = [NSURLSession sharedSession];
+	
+    NSURL * url = [NSURL URLWithString:@"http://silentdiscosquad.com/appindex.html/"];
+    NSURLSessionDataTask *dataTask = [defaultSession dataTaskWithURL:url
+														completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+															if(error == nil)
+															{
+																self.eventD = [NSJSONSerialization JSONObjectWithData:data
+																												 options:kNilOptions
+																												   error:&error];
+																for(NSDictionary *item in self.eventD) {
+																	NSLog (@"nsdic = %@", item);
+																}
+																self.returned = TRUE;
+															}
+														}];
+    [dataTask resume];
+	self.returned = FALSE;
+	while(self.returned == FALSE){
+		[NSThread sleepForTimeInterval:0.1f];
+	}
+	return TRUE;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
 	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

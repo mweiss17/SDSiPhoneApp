@@ -12,7 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "dMusicTableViewController.h"
 #import "Common.h"
-@interface cEventViewController : UIViewController<UIAlertViewDelegate, AVAudioPlayerDelegate, CLLocationManagerDelegate, PassInformation>{
+@interface cEventViewController : UIViewController<NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate, UIAlertViewDelegate, AVAudioPlayerDelegate, CLLocationManagerDelegate, PassInformation>{
 	MKMapView *mapView;
 	@public float latitude;
 	@public float longitude;
@@ -38,9 +38,19 @@
 	UISlider *slider;
 	UILabel *playtimeLabel;
 	UILabel *durationLabel;
+	
 }
 @property double startprop;
-
 @property double eta;
 @property NSTimer *updatePlayerTimer;
+@property int j;
+@property NSDate *requestStart;
+@property (nonatomic, retain) NSArray *serverTimestamp;
+@property (nonatomic, retain) NSString* serverTimestampString;
+@property (nonatomic, retain) NSDate* serverTimestampDate;
+@property NSTimeInterval serverTimeSinceEpoch;
+@property NSMutableArray *serverTimestampsArray;
+@property NSMutableArray *durations;
+@property NSTimeInterval requestDuration;
+
 @end
